@@ -129,8 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 22721378}
   - component: {fileID: 22721377}
+  - component: {fileID: 22721379}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,8 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 652773211}
-  MoveSpeed: 10
   RotateSpeed: 50
+  IsMoveing: 0
 --- !u!4 &22721378
 Transform:
   m_ObjectHideFlags: 0
@@ -167,6 +168,22 @@ Transform:
   - {fileID: 109981600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &22721379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22721376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b282ba461fdb8747b0470dec8f37529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 20
+  accelerationRate: 5
+  decelerationRate: 10
+  SpeedTxt: {fileID: 796301956}
 --- !u!1 &109981599
 GameObject:
   m_ObjectHideFlags: 0
