@@ -3,16 +3,22 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private float RotateSpeed = 5f;
+    [SerializeField] public float RotateSpeed = 5f;
     public bool IsMoveing;
 
     private Vector3 lastInput = Vector3.up;
+    private float lastRotation = 0;
 
     CarEngine carEngine;
 
     private void Awake()
     {
         carEngine = GetComponent<CarEngine>();
+    }
+
+    private void Start()
+    {
+        lastRotation = RotateSpeed;
     }
 
 
@@ -37,4 +43,18 @@ public class PlayerMovement : MonoBehaviour
         IsMoveing = Mathf.Abs(input.y) > 0.01f;
 
     }
+
+    public void IsDriftMovement(bool value)
+    {
+        if (value)
+        {
+            lastRotation = RotateSpeed;
+            RotateSpeed += RotateSpeed / 2f;
+        }
+        else
+        {
+            RotateSpeed = lastRotation;
+        }
+    }
+
 }
